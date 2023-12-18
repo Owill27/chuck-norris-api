@@ -1,7 +1,3 @@
-const { resolve } = require("node:path");
-
-const project = resolve(process.cwd(), "tsconfig.json");
-
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   extends: [
@@ -32,4 +28,9 @@ module.exports = {
     "node_modules/",
   ],
   overrides: [{ files: ["*.js?(x)", "*.ts?(x)"] }],
+  root: true,
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    project: true,
+  },
 };

@@ -1,0 +1,22 @@
+{
+  "name": "@norris/server",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "GraphQL API Server for chuck-norris application",
+  "main": "index.ts",
+  "scripts": {
+    "compile": "tsc",
+    "start": "npm run compile && node ./dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.9.5",
+    "graphql": "^16.8.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "typescript": "^5.3.3"
+  }
+}
