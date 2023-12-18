@@ -3,17 +3,23 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run gql:compile&&next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "gql:compile": "graphql-codegen"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.8",
+    "graphql": "^16.8.1",
     "next": "^14.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/client-preset": "^4.1.0",
+    "@graphql-typed-document-node/core": "^3.2.0",
     "@next/eslint-plugin-next": "^14.0.2",
     "@types/eslint": "^8.44.7",
     "@types/node": "^17.0.12",
