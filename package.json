@@ -6,8 +6,10 @@
     "server:build": "turbo build --filter server",
     "server:start": "turbo start --filter server",
     "dev": "turbo dev",
+    "server:dev": "turbo dev --filter server",
+    "client:dev": "turbo dev --filter client",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md,less}\""
   },
   "devDependencies": {
     "@norris/eslint-config": "*",

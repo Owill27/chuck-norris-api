@@ -106,6 +106,8 @@ const server = new ApolloServer({
   resolvers,
 });
 
+const PORT = process.env.PORT || 4000;
+
 startStandaloneServer(server, {
-  listen: { port: 4000 },
+  listen: { port: typeof PORT === 'string' ? parseInt(PORT) : PORT },
 }).then(({ url }) => console.log(`Server ready at: ${url}`));
