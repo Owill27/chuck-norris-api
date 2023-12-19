@@ -15,12 +15,13 @@ const CategoryInfo: FC<Props> = ({ categoryName }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.backButton}>
-        <IconButton icon={<IconArrowLeft />} onClick={() => push('/')} />
-      </div>
-      <Icon size={35} strokeWidth={1.5} />
-      <div className={styles.text}>
-        random <span className={styles.emphasized}>{categoryName}</span> joke
+      <IconButton icon={<IconArrowLeft />} onClick={() => push('/')} />
+
+      <div className={styles.textContainer}>
+        <Icon size={35} strokeWidth={1.5} />
+        <div className={styles.text}>
+          random <span className={styles.emphasized}>{categoryName}</span> joke
+        </div>
       </div>
     </div>
   );

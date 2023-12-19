@@ -28,8 +28,8 @@ const CategoriesList: FC<Props> = () => {
   if (loading) {
     view = (
       <div className={styles.categoriesGrid}>
-        {rangeMap(8, () => (
-          <div className={styles.loadingItem}></div>
+        {rangeMap(8, (i) => (
+          <div className={styles.loadingItem} key={i}></div>
         ))}
       </div>
     );

@@ -15,8 +15,12 @@
 }
 
 .text {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 500;
+
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+  }
 }
 
 .skeletonText {
@@ -48,7 +52,7 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .actionsBar {
