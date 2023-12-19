@@ -1,3 +1,5 @@
+@import '../../styles/animations.less';
+
 .hero {
   padding: 50px 0px;
   text-align: center;
@@ -14,29 +16,11 @@
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
 }
 
-@keyframes skeleton {
-  from {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 .loadingItem {
   height: 10rem;
   background: rgb(207, 207, 207);
   border-radius: 10px;
-  animation-name: skeleton;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
+  .skeleton-animation();
 }
 
 .categoryLink {

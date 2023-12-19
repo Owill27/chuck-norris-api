@@ -3,46 +3,9 @@ import { FC, ReactNode } from 'react';
 import NextLink from 'next/link';
 import styles from './list.module.less';
 import { gql } from '_graphql_';
-import {
-  IconDeer,
-  IconMovie,
-  IconMusic,
-  IconMicroscope,
-  IconPlane,
-  IconSoccerField,
-  IconPodium,
-  IconBuildingChurch,
-  IconSchool,
-  IconHeart,
-  IconDeviceDesktop,
-  IconRating18Plus,
-  IconHanger,
-  IconToolsKitchen2,
-  IconCashBanknote,
-  IconBuildingArch,
-  IconCategory,
-} from '@tabler/icons-react';
 import { rangeMap } from '@/lib/range-map';
 import InfoView from '../info-view/InfoView';
-
-const categoriesIcons = {
-  animal: IconDeer,
-  career: IconSchool,
-  celebrity: IconHeart,
-  dev: IconDeviceDesktop,
-  explicit: IconRating18Plus,
-  fashion: IconHanger,
-  food: IconToolsKitchen2,
-  history: IconBuildingArch,
-  money: IconCashBanknote,
-  movie: IconMovie,
-  music: IconMusic,
-  political: IconPodium,
-  religion: IconBuildingChurch,
-  science: IconMicroscope,
-  sport: IconSoccerField,
-  travel: IconPlane,
-};
+import { getCategoryIcon } from '@/lib/get-category-icon';
 
 const GET_CATEGORIES = gql(/* GraphQL */ `
   query Categories {
@@ -52,7 +15,7 @@ const GET_CATEGORIES = gql(/* GraphQL */ `
 
 interface Props {}
 
-const CategoriesList: FC<Props> = (props) => {
+const CategoriesList: FC<Props> = () => {
   const {
     loading,
     data: categories,
@@ -65,7 +28,7 @@ const CategoriesList: FC<Props> = (props) => {
   if (loading) {
     view = (
       <div className={styles.categoriesGrid}>
-        {rangeMap(8, (i) => (
+        {rangeMap(8, () => (
           <div className={styles.loadingItem}></div>
         ))}
       </div>
@@ -74,7 +37,7 @@ const CategoriesList: FC<Props> = (props) => {
     view = (
       <InfoView
         title='Unable to load icons'
-        message='Example message'
+        message={error.message}
         action={{ label: 'Retry', callback: () => refetch() }}
       />
     );
@@ -90,9 +53,7 @@ const CategoriesList: FC<Props> = (props) => {
     view = (
       <div className={styles.categoriesGrid}>
         {categories.getCategories.map((c) => {
-          const Icon =
-            categoriesIcons[c as unknown as keyof typeof categoriesIcons] ||
-            IconCategory;
+          const Icon = getCategoryIcon(c);
 
           return (
             <NextLink href={`/${c}`} className={styles.categoryLink} key={c}>

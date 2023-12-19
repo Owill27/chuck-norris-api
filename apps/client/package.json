@@ -12,6 +12,7 @@
   "dependencies": {
     "@apollo/client": "^3.8.8",
     "@tabler/icons-react": "^2.44.0",
+    "date-fns": "^3.0.0",
     "graphql": "^16.8.1",
     "next": "^14.0.3",
     "next-themes": "^0.2.1",

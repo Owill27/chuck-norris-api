@@ -38,6 +38,7 @@ export type Query = {
 
 export type QueryGetRandomFromCategoryArgs = {
   category: Scalars['String']['input'];
+  timestamp?: InputMaybe<Scalars['String']['input']>;
 };
 
 
@@ -51,18 +52,19 @@ export type SearchResults = {
   total: Scalars['Int']['output'];
 };
 
-export type CategoryJokeQueryVariables = Exact<{
-  category: Scalars['String']['input'];
-}>;
-
-
-export type CategoryJokeQuery = { __typename?: 'Query', getRandomFromCategory?: { __typename?: 'Joke', categories: Array<string>, created_at: string, icon_url: string, id: string, updated_at: string, url: string, value: string } | null };
-
 export type CategoriesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type CategoriesQuery = { __typename?: 'Query', getCategories?: Array<string> | null };
 
+export type CategoryJokeQueryVariables = Exact<{
+  category: Scalars['String']['input'];
+  timestamp?: InputMaybe<Scalars['String']['input']>;
+}>;
 
-export const CategoryJokeDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"CategoryJoke"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"category"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"getRandomFromCategory"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"category"},"value":{"kind":"Variable","name":{"kind":"Name","value":"category"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"categories"}},{"kind":"Field","name":{"kind":"Name","value":"created_at"}},{"kind":"Field","name":{"kind":"Name","value":"icon_url"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"updated_at"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}}]}}]} as unknown as DocumentNode<CategoryJokeQuery, CategoryJokeQueryVariables>;
+
+export type CategoryJokeQuery = { __typename?: 'Query', getRandomFromCategory?: { __typename?: 'Joke', categories: Array<string>, created_at: string, icon_url: string, id: string, updated_at: string, url: string, value: string } | null };
+
+
 export const CategoriesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Categories"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"getCategories"}}]}}]} as unknown as DocumentNode<CategoriesQuery, CategoriesQueryVariables>;
+export const CategoryJokeDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"CategoryJoke"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"category"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"timestamp"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"getRandomFromCategory"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"category"},"value":{"kind":"Variable","name":{"kind":"Name","value":"category"}}},{"kind":"Argument","name":{"kind":"Name","value":"timestamp"},"value":{"kind":"Variable","name":{"kind":"Name","value":"timestamp"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"categories"}},{"kind":"Field","name":{"kind":"Name","value":"created_at"}},{"kind":"Field","name":{"kind":"Name","value":"icon_url"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"updated_at"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}}]}}]} as unknown as DocumentNode<CategoryJokeQuery, CategoryJokeQueryVariables>;

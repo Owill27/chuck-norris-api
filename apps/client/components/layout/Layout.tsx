@@ -28,16 +28,20 @@ const Layout: FC<PropsWithChildren<Props>> = (props) => {
       </Head>
 
       <header className={styles.header}>
-        <IconButton
-          icon={<IconBrandGithub />}
-          size='md'
-          isRound
-          onClick={() =>
-            window.open('https://github.com/Owill27/chuck-norris-api')
-          }
-        />
         <Logo width='100px' />
-        <ColorModeSwitcher />
+
+        <div className={styles.actions}>
+          <IconButton
+            icon={<IconBrandGithub />}
+            size='md'
+            isRound
+            onClick={() =>
+              window.open('https://github.com/Owill27/chuck-norris-api')
+            }
+          />
+
+          <ColorModeSwitcher />
+        </div>
       </header>
 
       {props.children}
