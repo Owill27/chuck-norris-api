@@ -20,11 +20,6 @@ type Joke = {
   categories: string[];
 };
 
-type SearchResults = {
-  total: number;
-  result: Joke[];
-};
-
 const typeDefs = `#graphql
   type Joke {
     id: ID!

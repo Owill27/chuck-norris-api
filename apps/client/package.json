@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "npm run gql:compile&&next dev",
+    "gql:gen": "graphql-codegen",
+    "dev": "npm run gql:gen&&next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --max-warnings 0",
-    "gql:compile": "graphql-codegen",
     "types:check": "tsc"
   },
   "dependencies": {
