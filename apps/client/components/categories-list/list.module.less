@@ -1,4 +1,5 @@
 @import '../../styles/animations.less';
+@import '../../styles/colors.less';
 
 .hero {
   padding: 50px 0px;
@@ -18,9 +19,13 @@
 
 .loadingItem {
   height: 10rem;
-  background: rgb(207, 207, 207);
+  background: @grayLight;
   border-radius: 10px;
   .skeleton-animation();
+
+  [data-theme='dark'] & {
+    background: @grayDark;
+  }
 }
 
 .categoryLink {
@@ -31,10 +36,14 @@
 .categoryItem {
   display: flex;
   flex-direction: column;
-  background: rgb(207, 207, 207);
+  background: @grayLight;
   border-radius: 10px;
   padding: 20px;
   text-transform: capitalize;
+
+  [data-theme='dark'] & {
+    background: @grayDark;
+  }
 }
 
 .categoryItemText {

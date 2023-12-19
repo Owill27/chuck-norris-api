@@ -1,11 +1,17 @@
 @import '../../styles/animations.less';
+@import '../../styles/colors.less';
 
 .card {
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid;
+  border-color: @grayLight;
   border-radius: 10px;
   padding: 20px;
   max-width: 45rem;
   margin: 0px auto;
+
+  [data-theme='dark'] & {
+    border-color: @grayDark;
+  }
 }
 
 .text {
@@ -15,19 +21,28 @@
 
 .skeletonText {
   div {
-    background-color: gray;
+    background-color: @grayLight;
     height: 1.2rem;
     border-radius: 10px;
     margin-top: 15px;
     animation-name: skeleton;
     .skeleton-animation();
+
+    [data-theme='dark'] & {
+      background-color: @grayDark;
+    }
   }
 }
 
 .divider {
   border: none;
-  border-top: 1px solid rgb(196, 196, 196);
+  border-top: 1px solid;
+  border-color: @borderLight;
   margin: 20px 0px;
+
+  [data-theme='dark'] & {
+    border-color: @borderDark;
+  }
 }
 
 .footer {
@@ -54,16 +69,24 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 100px;
-  background-color: gray;
+  background-color: @grayLight;
   .skeleton-animation();
+
+  [data-theme='dark'] & {
+    background: @grayDark;
+  }
 }
 
 .buttonSkeleton {
   width: 5rem;
   height: 2.5rem;
   border-radius: 10px;
-  background-color: gray;
+  background-color: @grayLight;
   .skeleton-animation();
+
+  [data-theme='dark'] & {
+    background: @grayDark;
+  }
 }
 
 .actionLabel {

@@ -4,23 +4,18 @@ import styles from './button.module.less';
 interface Props {
   icon: ReactNode;
   size?: 'sm' | 'md';
-  variant?: 'solid' | 'outline' | 'ghost';
-  isRound?: boolean;
+  isTransparent?: boolean;
   onClick: VoidFunction;
 }
 
-const IconButton: FC<Props> = ({ icon, size, isRound, variant, onClick }) => {
+const IconButton: FC<Props> = ({ icon, size, isTransparent, onClick }) => {
   const className = useMemo(() => {
-    let classNames = [
-      styles.iconButton || '',
-      styles[size || 'md'],
-      styles[variant || 'solid'],
-    ];
+    let classNames = [styles.iconButton || '', styles[size || 'md']];
 
-    if (isRound) classNames.push(styles.round);
+    if (isTransparent) classNames.push(styles.transparent);
 
     return classNames.join(' ');
-  }, [size, isRound, variant]);
+  }, [size, isTransparent]);
 
   return (
     <button className={className} onClick={onClick}>

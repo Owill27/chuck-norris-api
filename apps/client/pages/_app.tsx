@@ -7,7 +7,7 @@ import {
 import { AppProps } from 'next/app';
 import { useMemo } from 'react';
 import { ThemeProvider } from 'next-themes';
-import { Onest, Bricolage_Grotesque, Inclusive_Sans } from 'next/font/google';
+import { Onest } from 'next/font/google';
 
 import '../styles/gloabal.less';
 

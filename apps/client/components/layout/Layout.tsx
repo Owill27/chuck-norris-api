@@ -34,7 +34,6 @@ const Layout: FC<PropsWithChildren<Props>> = (props) => {
           <IconButton
             icon={<IconBrandGithub />}
             size='md'
-            isRound
             onClick={() =>
               window.open('https://github.com/Owill27/chuck-norris-api')
             }

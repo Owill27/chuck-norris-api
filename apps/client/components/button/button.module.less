@@ -1,3 +1,5 @@
+@import '../../styles/colors.less';
+
 .base {
   cursor: pointer;
   display: flex;
@@ -7,6 +9,19 @@
   font-family: inherit;
   font-size: 0.9rem;
   font-weight: 500;
+  background: @grayLight;
+
+  &.transparent {
+    background: transparent;
+  }
+
+  [data-theme='dark'] & {
+    background: @grayDark;
+
+    &.transparent {
+      background: transparent;
+    }
+  }
 }
 
 .button {

@@ -28,6 +28,7 @@ const ColorModeSwitcher: FC<Props> = (props) => {
           key={dt.name}
           icon={theme === dt.name ? <dt.iconFilled /> : <dt.icon />}
           size='sm'
+          isTransparent={theme !== dt.name}
           onClick={() => setTheme(dt.name)}
         />
       ))}

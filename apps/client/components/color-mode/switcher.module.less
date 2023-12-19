@@ -1,9 +1,16 @@
+@import '../../styles/colors.less';
+
 .switcher {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3px;
   padding: 3px;
-  border: 2px solid gray;
+  border: 1px solid;
+  border-color: @borderLight;
   border-radius: 100px;
+
+  [data-theme='dark'] & {
+    border-color: @borderDark;
+  }
 }
