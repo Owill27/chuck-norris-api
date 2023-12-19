@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@apollo/client": "^3.8.8",
+    "@tabler/icons-react": "^2.44.0",
     "graphql": "^16.8.1",
     "next": "^14.0.3",
+    "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -26,6 +28,9 @@
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
     "eslint": "^8.53.0",
+    "less": "^4.2.0",
+    "less-loader": "^11.1.3",
+    "next-with-less": "^3.0.1",
     "typescript": "^5.2.2"
   }
 }

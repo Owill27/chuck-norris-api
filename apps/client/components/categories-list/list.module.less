@@ -1,0 +1,60 @@
+.hero {
+  padding: 50px 0px;
+  text-align: center;
+
+  .title {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+
+@keyframes skeleton {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.loadingItem {
+  height: 10rem;
+  background: rgb(207, 207, 207);
+  border-radius: 10px;
+  animation-name: skeleton;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+.categoryLink {
+  text-decoration: none;
+  color: initial;
+}
+
+.categoryItem {
+  display: flex;
+  flex-direction: column;
+  background: rgb(207, 207, 207);
+  border-radius: 10px;
+  padding: 20px;
+  text-transform: capitalize;
+}
+
+.categoryItemText {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}

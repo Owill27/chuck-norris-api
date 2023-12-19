@@ -1,0 +1,38 @@
+.base {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.button {
+  .base();
+  border-radius: 10px;
+
+  &.sm {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  &.md {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.iconButton {
+  .base();
+  border-radius: 100px;
+}
+
+/* Sizes */
+.sm {
+  padding: 5px;
+}
+
+.md {
+  padding: 10px;
+}

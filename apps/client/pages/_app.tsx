@@ -1,32 +1,51 @@
-import { ApolloClient, InMemoryCache, ApolloProvider, NormalizedCacheObject } from '@apollo/client';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  NormalizedCacheObject,
+} from '@apollo/client';
 import { AppProps } from 'next/app';
 import { useMemo } from 'react';
+import { ThemeProvider } from 'next-themes';
+import { Onest, Bricolage_Grotesque, Inclusive_Sans } from 'next/font/google';
 
-let apolloClient: ApolloClient<NormalizedCacheObject> | undefined = undefined
+import '../styles/gloabal.less';
+
+let apolloClient: ApolloClient<NormalizedCacheObject> | undefined = undefined;
 
 function createApolloClient() {
-  const link: string = process.env.API_URL || 'http://localhost:4000'
-  
+  const link: string = process.env.API_URL || 'http://localhost:4000';
+
   return new ApolloClient({
     uri: link as string,
     cache: new InMemoryCache(),
-  })
+  });
 }
 
 export function initializeApollo() {
-  const _apolloClient = apolloClient ?? createApolloClient()
-  
-  if (!apolloClient) apolloClient = _apolloClient
-  return _apolloClient
+  const _apolloClient = apolloClient ?? createApolloClient();
+
+  if (!apolloClient) apolloClient = _apolloClient;
+  return _apolloClient;
 }
 
-export default function App({ Component, pageProps }: AppProps) {
+const font = Onest({
+  subsets: ['latin'],
+});
 
-  const client = useMemo(() => initializeApollo(), [])
+export default function App({ Component, pageProps }: AppProps) {
+  const client = useMemo(() => initializeApollo(), []);
 
   return (
     <ApolloProvider client={client}>
-      <Component {...pageProps} />
+      <ThemeProvider>
+        <style jsx global>{`
+          html {
+            font-family: ${font.style.fontFamily};
+          }
+        `}</style>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </ApolloProvider>
-  )
+  );
 }
