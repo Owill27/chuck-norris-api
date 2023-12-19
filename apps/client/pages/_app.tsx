@@ -14,7 +14,8 @@ import '../styles/gloabal.less';
 let apolloClient: ApolloClient<NormalizedCacheObject> | undefined = undefined;
 
 function createApolloClient() {
-  const link: string = process.env.API_URL || 'http://localhost:4000';
+  const link: string =
+    process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
 
   return new ApolloClient({
     uri: link as string,
